@@ -1,5 +1,41 @@
+/* import packages */
 import React from "react";
 
+/* import local components */
+
 export default function Home() {
-  return <div>This is my home bitch!!</div>;
+  return (
+    <>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+      <h2>My home</h2>
+    </>
+  );
 }
