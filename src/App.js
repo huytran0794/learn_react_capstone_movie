@@ -6,17 +6,21 @@ import { Route, Routes } from "react-router-dom";
 
 /* import pages components */
 import Home from "./Pages/Home";
-import BookList from "./Pages/BookList";
+import MovieDetailPage from "./Pages/MovieDetailPage";
+import LoginPage from "./Pages/LoginPage";
+import RegisterPage from "./Pages/RegisterPage";
+import Layout from "./core/Layout/Layout";
 function App() {
+  let LayoutComponent = (Component) => <Layout BodyComponent={Component} />;
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={LayoutComponent(Home)} />
+        <Route path="/login" element={LayoutComponent(LoginPage)} />
+        <Route path="/register" element={LayoutComponent(RegisterPage)} />
         <Route
-          path="/booklist"
-          element={
-            <h2 className="text-center text-red-400">Hello book reader</h2>
-          }
+          path="/movies/detail/:id"
+          element={LayoutComponent(MovieDetailPage)}
         />
       </Routes>
     </div>
