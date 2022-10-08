@@ -1,23 +1,37 @@
 /* import packages */
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 /* import local component */
-import NavigationBar from "../NavigationBar/NavigationBar";
 import Logo from "../Logo/Logo";
-import UserAccountNav from "../NavigationBar/UserNavBar/UserAccountNav";
-import { NAV_MODE_HORIZONTAL, NAV_ITEMS_ARR } from "../../constant/Nav.data";
-import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import Container from "../Container/Container";
+import NavigationBar from "../NavigationBar/NavigationBar";
+import UserAccountNav from "../NavigationBar/UserNavBar/UserAccountNav";
+import { MAIN_NAV_DATA } from "../../constant/Nav.data";
+
 export default function Header() {
-  let headerWrapClass = `sticky top-0 z-10 shadow-2xl	shadow-indigo-500/50`;
+  const [isScrolling, setIsScrolling] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 120) {
+        setIsScrolling(true);
+      }
+    });
+  });
+  let headerWrapClass = `sticky top-0 z-10 shadow-xl shadow-indigo-400/70 ${
+    isScrolling ? "bg-[#1b2130]" : ""
+  }`;
+  console.log("rendering header");
   return (
     <header className={headerWrapClass}>
       <Container>
-        <FlexWrapper align="center" justity="between" className="py-5">
+        <div className="py-5 flex justify-between items-center">
           <Logo />
-          <NavigationBar mode={NAV_MODE_HORIZONTAL} menuItems={NAV_ITEMS_ARR} />
+          <NavigationBar
+            mode={MAIN_NAV_DATA.mode}
+            menuItems={MAIN_NAV_DATA.item}
+          />
           <UserAccountNav />
-        </FlexWrapper>
+        </div>
       </Container>
     </header>
   );

@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 
 /* import local files */
 import logo from "../../img/logo.svg";
-import FlexWrapper from "../FlexWrapper/FlexWrapper";
 
-export default function Logo() {
+export default function Logo({ className }) {
   return (
-    <FlexWrapper className="logo-container" align="center" justity="center">
-      <div className="logo-wrapper w-40 h-full">
+    <div className="logo-container flex justify-center items-center">
+      <div className={`logo-wrapper w-40 h-full ${className}`}>
         <Link to="/">
           <img
             src={logo}
@@ -18,6 +17,6 @@ export default function Logo() {
           />
         </Link>
       </div>
-    </FlexWrapper>
+    </div>
   );
 }

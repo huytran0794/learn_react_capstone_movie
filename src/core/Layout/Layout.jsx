@@ -17,7 +17,7 @@ export default function Layout({
       {location.pathname !== "/login" && location.pathname !== "/register" && (
         <HeaderComponent />
       )}
-      <main>
+      <main className="py-8">
         <BodyComponent />
       </main>
       {location.pathname !== "/login" && location.pathname !== "/register" && (

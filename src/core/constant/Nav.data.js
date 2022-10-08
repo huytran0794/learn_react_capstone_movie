@@ -1,19 +1,38 @@
+/* import local components */
 import NavItem from "../Components/NavigationBar/NavItem/NavItem";
-const NAV_MODE_HORIZONTAL = "horizontal";
+import UserNavItem from "../Components/NavigationBar/NavItem/UserNavItem";
 
-const NAV_ITEMS_ARR = [
-  {
-    label: <NavItem toUrl="/">Movies</NavItem>,
-    key: "home",
-  },
-  {
-    label: <NavItem toUrl="/cinemas"> Cinemas </NavItem>,
-    key: "cinemas",
-  },
-  {
-    label: <NavItem toUrl="/news"> News </NavItem>,
-    key: "news",
-  },
-];
+const MAIN_NAV_DATA = {
+  mode: "horizontal",
+  item: [
+    {
+      label: <NavItem toUrl="/">Movies</NavItem>,
+      key: "home",
+    },
+    {
+      label: <NavItem toUrl="/cinemas"> Cinemas </NavItem>,
+      key: "cinemas",
+    },
+    {
+      label: <NavItem toUrl="/news"> News </NavItem>,
+      key: "news",
+    },
+  ],
+};
 
-export { NAV_MODE_HORIZONTAL, NAV_ITEMS_ARR };
+/* user nav data */
+const USER_NAV_DATA = {
+  mode: "vertical",
+  items: [
+    {
+      label: <UserNavItem toUrl="/">Sign in</UserNavItem>,
+      key: "signin",
+    },
+    {
+      label: <UserNavItem toUrl="/cinemas"> Sign up </UserNavItem>,
+      key: "signup",
+    },
+  ],
+};
+
+export { MAIN_NAV_DATA, USER_NAV_DATA };
