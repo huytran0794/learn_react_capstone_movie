@@ -10,19 +10,18 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import Layout from "./core/Layout/Layout";
 function App() {
-  let LayoutComponent = (Component) => <Layout BodyComponent={Component} />;
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={LayoutComponent(Home)} />
-        <Route path="/login" element={LayoutComponent(LoginPage)} />
-        <Route path="/register" element={LayoutComponent(RegisterPage)} />
-        <Route
-          path="/movies/detail/:id"
-          element={LayoutComponent(MovieDetailPage)}
-        />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="movies">
+          <Route path="detail/:id" element={MovieDetailPage} />
+          <Route path="booking-ticket/:scheduleId" element={MovieDetailPage} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
 
