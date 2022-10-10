@@ -17,11 +17,11 @@ export default function TabsMovie() {
   const renderMovieTheaterBrand = () => {
     let brandTabList = () => {
       return dataMovies.map((hethong, hethong_idx) => {
-        let dsCumRap = renderMovieTheater(hethong.lstCumRap);
+        // let dsCumRap = renderMovieTheater(hethong.lstCumRap);
         return {
           label: <img className="w-16 h-16" src={hethong.logo} />,
           key: { hethong_idx },
-          children: dsCumRap,
+          // children: dsCumRap,
         };
       });
     };
@@ -35,9 +35,9 @@ export default function TabsMovie() {
         let id = `cum-rap-${cumRap_idx}`;
         return {
           label: (
-            <div className="w-48 text-left">
+            <div className="">
               <p className="text-gray-700 truncate">{cumRap.tenCumRap}</p>
-              <p className="text-ellipsis overflow-hidden">{cumRap.diaChi}</p>
+              <p className="">{cumRap.diaChi}</p>
             </div>
           ),
           key: { id },
@@ -46,14 +46,19 @@ export default function TabsMovie() {
       });
     };
     return (
-      <Tabs className="h-[500px]" tabPosition="left" items={cumRapTabList()} />
+      <Tabs
+        className="h-[500px]"
+        tabPosition="left"
+        items={cumRapTabList()}
+        tabBarStyle={{ backgroundColor: "red!important" }}
+      />
     );
   };
 
   const renderMovie = (dsPhim) => {
     return (
       <div className="h-[500px] scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-blue-300 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
-        {dsPhim.map((phim, phim_idx) => {   
+        {dsPhim.map((phim, phim_idx) => {
           return <ItemTabMovie key={phim_idx} data={phim} />;
         })}
       </div>

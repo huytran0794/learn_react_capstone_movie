@@ -9,7 +9,7 @@ export default function Logo({ className }) {
   return (
     <div className="logo-container flex justify-center items-center">
       <div className={`logo-wrapper w-40 h-full ${className}`}>
-        <Link to="/">
+        <Link to="/" className="w-full h-full">
           <img
             src={logo}
             alt="Plex"

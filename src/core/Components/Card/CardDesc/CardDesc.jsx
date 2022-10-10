@@ -3,7 +3,7 @@ import React from "react";
 import clsx from "clsx";
 
 /* import utils */
-import { convertTimeOnlyYear } from "../../../utils/convertime";
+import { convertTimeOnlyYear } from "../../../utils/converTime";
 
 /* import local components */
 
