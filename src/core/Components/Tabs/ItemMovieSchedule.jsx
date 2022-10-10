@@ -8,7 +8,7 @@ import { convertTimeMovieFormat } from "../../utils/converTime";
 export default function ItemMovieSchedule({ maLichChieu, ngayChieuGioChieu }) {
   return (
     <NavLink
-      to={`/dat-ve/${maLichChieu}`}
+      to={`/movie/book-ticket/${maLichChieu}`}
       className={clsx(
         "movie-schedule",
         "border border-solid border-slate-400/10 rounded-md",

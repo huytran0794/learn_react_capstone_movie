@@ -4,11 +4,12 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
 /* import pages components */
+import Layout from "./core/Layout/Layout";
 import Home from "./Pages/Home/Home";
-import MovieDetailPage from "./Pages/MovieDetailPage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
-import Layout from "./core/Layout/Layout";
+import MovieDetailPage from "./Pages/MovieDetailPage";
+import MovieBookingPage from "./Pages/Booking/MovieBookingPage";
 function App() {
   return (
     <Routes>
