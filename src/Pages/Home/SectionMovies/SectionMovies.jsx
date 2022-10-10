@@ -4,7 +4,7 @@ import React from "react";
 
 /* import local components */
 import MovieCard from "../../../core/Components/Card/MovieCard";
-import SectionMovie from "../../../core/Components/Section/Section";
+import SectionWrapper from "../../../core/Components/Section/SectionWrapper";
 
 export default function SectionMovies({ title, movieList }) {
   let renderMovie = () => {
@@ -13,16 +13,17 @@ export default function SectionMovies({ title, movieList }) {
     });
   };
   const titleCustomClass = clsx(
-    "relative",
-    "before:absolute before:block before:w-5 before:h-[60px] before:-top-2 before:-left-2 before:bg-[#C8235D] before:-z-[1]",
-    "after:absolute after:block after:bottom-0 after:right-0 after:bg-[#9CA7CB] after:w-28 after:h-[5px]"
+    "after:absolute after:block after:-bottom-3 after:-right-10 after:bg-[#9CA7CB] after:w-28 after:h-[7px]"
   );
+
+  const contentCustomClass = "grid grid-cols-4 gap-y-10 gap-x-20";
   return (
-    <SectionMovie
+    <SectionWrapper
       title={title}
+      customClass="movie-upcoming"
       content={renderMovie()}
       titleCustomClass={titleCustomClass}
-      customClass="movie-upcoming"
+      contentCustomClass={contentCustomClass}
     />
   );
 }

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 /* import local components */
 import MOVIE_SERVICE from "../../core/service/movieService";
 import SectionMovies from "./SectionMovies/SectionMovies";
-import TabsMovie from "../../core/Components/Tabs/TabsMovie";
+import SectionTabs from "./SectionMovieSchedule/SectionTabs";
 
 export default function Home() {
   console.log("render body content");
@@ -36,7 +36,7 @@ export default function Home() {
       <SectionMovies title="nowshowing" movieList={nowShowingArr} />
 
       {/* Section - Tabs Movies & Theater */}
-      <TabsMovie />
+      <SectionTabs title="Movie schedule" />
     </>
   );
 }
