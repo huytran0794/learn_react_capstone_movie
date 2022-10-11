@@ -18,8 +18,11 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="movies">
-          <Route path="detail/:id" element={MovieDetailPage} />
-          <Route path="booking-ticket/:scheduleId" element={MovieDetailPage} />
+          <Route path="detail/:id" element={<MovieDetailPage />} />
+          <Route
+            path="book-ticket/:scheduleId"
+            element={<MovieBookingPage />}
+          />
         </Route>
       </Route>
     </Routes>

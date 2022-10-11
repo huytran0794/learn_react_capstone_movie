@@ -14,6 +14,7 @@ export default function Layout() {
         <Header />
       )}
       <main className="py-10">
+        <Banner />
         <Outlet />
       </main>
       {location.pathname !== "/login" && location.pathname !== "/register" && (

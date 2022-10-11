@@ -7,7 +7,7 @@ import SectionMovies from "./SectionMovies/SectionMovies";
 import SectionTabs from "./SectionMovieSchedule/SectionTabs";
 
 export default function Home() {
-  console.log("render body content");
+  console.log("render page home content");
   const [movieList, setMovieList] = useState([]);
   let upComingArr = [],
     nowShowingArr = [],
