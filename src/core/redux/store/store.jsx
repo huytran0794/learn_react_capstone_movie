@@ -2,10 +2,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import userReducer from "../slice/userSlice";
-import movieReducer from "../slice/movieSlice";
-
+import bookTicketReducer from "../slice/bookTicketSlice";
 const store = configureStore({
-  reducer: { userReducer, movieReducer },
+  reducer: { userReducer, bookTicketReducer },
   devTools: true,
 });
 

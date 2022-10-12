@@ -12,9 +12,6 @@ export default function SectionMovies({ title, movieList }) {
       return <MovieCard data={item} key={"#" + item.maPhim.toString() + idx} />;
     });
   };
-  const titleCustomClass = clsx(
-    "after:absolute after:block after:-bottom-3 after:-right-10 after:bg-[#9CA7CB] after:w-28 after:h-[7px]"
-  );
 
   const contentCustomClass = "grid grid-cols-4 gap-y-10 gap-x-20";
   return (
@@ -22,7 +19,6 @@ export default function SectionMovies({ title, movieList }) {
       title={title}
       customClass="movie-upcoming"
       content={renderMovie()}
-      titleCustomClass={titleCustomClass}
       contentCustomClass={contentCustomClass}
     />
   );

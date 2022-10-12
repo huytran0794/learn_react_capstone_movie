@@ -1,9 +1,14 @@
-import { BOOKING_TICKET_AXIOS_INSTANCE } from "./configURL";
+import { AXIOS_INSTANCE_GENERATOR, BASE_BOOKING_TICKET_URL } from "./configURL";
 
 const BOOKING_SERVICE = {
   getMovieScheduleById: (scheduleId) =>
-    BOOKING_TICKET_AXIOS_INSTANCE.get(
+    AXIOS_INSTANCE_GENERATOR(BASE_BOOKING_TICKET_URL).get(
       `/LayDanhSachPhongVe?MaLichChieu=${scheduleId}`
+    ),
+  bookTicket: (data) =>
+    AXIOS_INSTANCE_GENERATOR(BASE_BOOKING_TICKET_URL, true).post(
+      "/DatVe",
+      data
     ),
 };
 

@@ -7,6 +7,7 @@ import Container from "../Container/Container";
 
 export default function SectionWrapper({
   title,
+  subTitle,
   content,
   customClass,
   titleCustomClass,
@@ -16,22 +17,28 @@ export default function SectionWrapper({
     <section className={clsx("py-10", customClass)}>
       <Container>
         {title && (
-          <div
-            className={clsx(
-              "section-title",
-              "flex items-center",
-              "py-4 px-4 mb-20"
-            )}
-          >
+          <div className={clsx("section-title", "py-4 px-4 mb-20")}>
             <h3
               className={clsx(
-                "uppercase text-[#fffffffc] text-4xl font-extrabold tracking-wide relative mb-0",
+                "title",
+                "uppercase text-[#fffffffc] text-4xl font-extrabold tracking-wide relative",
                 "before:absolute before:block before:w-5 before:h-[60px] before:-top-2 before:-left-2 before:bg-[#F3842A] before:-z-[1]",
+                "mb-2",
                 titleCustomClass
               )}
             >
               {title}
             </h3>
+            {subTitle && (
+              <h6
+                className={clsx(
+                  "sub-title text-base tracking-wider text-slate-300 font-medium",
+                  "pl-4"
+                )}
+              >
+                {subTitle}
+              </h6>
+            )}
           </div>
         )}
         {content && (
