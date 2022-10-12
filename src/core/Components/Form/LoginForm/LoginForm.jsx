@@ -72,10 +72,10 @@ export default function LoginForm({
       <Form.Item className="flex justify-center">
         <CustomButton
           btnType="btnPink"
-          className="w-52 py-6 px-12 font-bold text-xl h-12"
+          className="w-56 py-6 px-12 font-bold text-xl h-14"
           htmlType="submit"
         >
-          Sign In x
+          Sign In
         </CustomButton>
       </Form.Item>
     </Form>

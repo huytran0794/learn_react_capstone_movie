@@ -1,5 +1,5 @@
 /* import packages */
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 /* import local component */
 import Logo from "../Logo/Logo";
@@ -9,17 +9,8 @@ import UserAccountNav from "../NavigationBar/UserNavBar/UserAccountNav";
 import { MAIN_NAV_DATA } from "../../constant/Nav.data";
 
 export default function Header() {
-  const [isScrolling, setIsScrolling] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 120) {
-        setIsScrolling(true);
-      }
-    });
-  });
-  let headerWrapClass = `sticky top-0 z-10 shadow-xl shadow-indigo-400/70 ${
-    isScrolling ? "bg-[#1b2130]" : ""
-  }`;
+  let headerWrapClass =
+    "sticky top-0 z-10 bg-[#1b2130] border-b border-solid border-slate-400/40 shadow-sm shadow-indigo-700";
   console.log("rendering header");
   return (
     <header className={headerWrapClass}>

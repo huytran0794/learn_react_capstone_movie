@@ -14,13 +14,11 @@ import { useActions } from "../core/redux/slice/userSlice";
 import USER_SERVICE from "../core/service/userService";
 import { LOCAL_SERVICE } from "../core/service/localService";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toastify from "../core/utils/toastify/toastifyUtils";
 
 export default function LoginPage() {
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  const notify = () => toast("Login successfully");
 
   const onLoginSuccess = (data) => {
     let { username: taiKhoan, password: matKhau } = data;
@@ -31,18 +29,21 @@ export default function LoginPage() {
         dispatch(useActions.login(res.data.content));
         // update local storage
         LOCAL_SERVICE.user.set(res.data.content);
-
         // show success notifcation then redirect
-        notify();
+        toastify("Login successfully !", "success");
         setTimeout(() => {
-          navigate("/");
+          navigate("/", { replace: true });
         }, 2000);
       })
-      .catch((err) => console.error(`>> Error !! ${err}`));
+      .catch((err) => {
+        // show success notifcation then redirect
+        toastify("Login fails !", "error");
+        console.error(`>> Error !! ${err}`);
+      });
   };
 
   const onLoginFail = (errorInfo) => {
-    console.log("fail", errorInfo);
+    toastify(`Login fails ! ${errorInfo}`, "error");
   };
   return (
     <div className="page-login">

@@ -16,13 +16,9 @@ export default function SectionTabs({ title }) {
       .catch((err) => console.error(err));
   }, []);
 
-  const titleCustomClass = clsx(
-    "after:absolute after:block after:-bottom-3 after:-right-10 after:bg-[#9CA7CB] after:w-28 after:h-[7px]"
-  );
   return (
     <SectionWrapper
       title={title}
-      titleCustomClass={titleCustomClass}
       contentCustomClass="h-[1000px]"
       content={<TabsCinemaBrand hethongRapPhim={hethongRapPhim} />}
     />

@@ -4,11 +4,14 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
 /* import pages components */
+import Layout from "./core/Layout/Layout";
 import Home from "./Pages/Home/Home";
-import MovieDetailPage from "./Pages/MovieDetailPage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
-import Layout from "./core/Layout/Layout";
+import MovieDetailPage from "./Pages/MovieDetailPage";
+import MovieBookingPage from "./Pages/Booking/MovieBookingPage";
+import AccountPage from "./Pages/Account/Account";
+
 function App() {
   return (
     <Routes>
@@ -17,9 +20,13 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="movies">
-          <Route path="detail/:id" element={MovieDetailPage} />
-          <Route path="booking-ticket/:scheduleId" element={MovieDetailPage} />
+          <Route path="detail/:id" element={<MovieDetailPage />} />
+          <Route
+            path="book-ticket/:scheduleId"
+            element={<MovieBookingPage />}
+          />
         </Route>
+        <Route path="account" element={<AccountPage />} />
       </Route>
     </Routes>
   );
