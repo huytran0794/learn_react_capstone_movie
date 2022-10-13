@@ -3,16 +3,15 @@ import React from "react";
 
 export default function Banner({ className, pageLocation }) {
   let heroComponent;
-
-  if (pageLocation.toLowerCase() === "home") {
-    heroComponent = "Swiper";
-  } else {
-    heroComponent = "Other pages";
-  }
-  console.log("rendering banner" + heroComponent);
   return (
-    <div className={clsx("banner z-11", "bg-white", className)}>
-      {heroComponent}
+    <div
+      className={clsx(
+        "banner z-[1]",
+        "bg-movies1 bg-cover bg-no-repeat bg-[right_-200px_top]",
+        className
+      )}
+    >
+      <div className="overlay bg-bannerOverlay h-full"></div>
     </div>
   );
 }

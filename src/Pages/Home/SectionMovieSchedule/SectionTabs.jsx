@@ -20,6 +20,7 @@ export default function SectionTabs({ title }) {
     <SectionWrapper
       title={title}
       contentCustomClass="h-[1000px]"
+      customClass="tabs-cinema-movies"
       content={<TabsCinemaBrand hethongRapPhim={hethongRapPhim} />}
     />
   );

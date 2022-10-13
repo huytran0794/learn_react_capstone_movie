@@ -12,12 +12,13 @@ const userSlice = createSlice({
     login: (state, action) => {
       state.user = action.payload;
     },
-    loginSuccess: (state, action) => {},
-    loginFail: (state, action) => {},
+    updateProfile: (state, action) => {
+      state.user = action.payload;
+    },
   },
 });
 
-export const useActions = userSlice.actions;
+export const userActions = userSlice.actions;
 
 const userReducer = userSlice.reducer;
 

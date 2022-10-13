@@ -10,7 +10,7 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import MovieDetailPage from "./Pages/MovieDetailPage";
 import MovieBookingPage from "./Pages/Booking/MovieBookingPage";
-import AccountPage from "./Pages/Account/Account";
+import Profile from "./Pages/Profile/Profile";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
             element={<MovieBookingPage />}
           />
         </Route>
-        <Route path="account" element={<AccountPage />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
     </Routes>
   );
