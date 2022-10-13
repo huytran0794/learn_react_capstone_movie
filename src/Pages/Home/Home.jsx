@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import MOVIE_SERVICE from "../../core/service/movieService";
 import SectionMovies from "./SectionMovies/SectionMovies";
 import SectionTabs from "./SectionMovieSchedule/SectionTabs";
+import SectionBanner from "./SectionBanner/SectionBanner";
 
 export default function Home() {
   console.log("render page home content");
@@ -26,6 +27,8 @@ export default function Home() {
   hotMoviesArr = movieList.filter((movie) => movie.hot);
   return (
     <>
+      {/* Section banner */}
+      <SectionBanner className="h-[40vh]" />
       {/* Section - Movie - Premiere  */}
       <SectionMovies title="Premiere" movieList={hotMoviesArr} />
 

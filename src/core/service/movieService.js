@@ -13,6 +13,8 @@ const MOVIE_SERVICE = {
     AXIOS_INSTANCE_GENERATOR(BASE_MOVIE_BY_THEATER_URL).get(
       `/LayThongTinLichChieuHeThongRap?maNhom=${groupId}`
     ),
+  getAllBanner: () =>
+    AXIOS_INSTANCE_GENERATOR(BASE_MOVIE_URL).get(`/LayDanhSachBanner`),
 };
 
 export default MOVIE_SERVICE;

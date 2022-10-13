@@ -12,16 +12,17 @@ import CardDesc from "./CardDesc/CardDesc";
 
 export default function MovieCard(props) {
   let { maPhim, tenPhim, trailer, hinhAnh, ngayKhoiChieu } = props.data;
+  const DETAIL_ROUTE = `/detail/${maPhim}`;
   let renderCard = () => (
     <Card
       id={maPhim}
       bordered={false}
-      cover={<CardCover url={hinhAnh} />}
-      className="card movie-card group rounded-none w-full h-full flex flex-col overflow-hidden"
+      cover={<CardCover url={hinhAnh} detailUrl={DETAIL_ROUTE} />}
+      className="card movie-card rounded-none w-full h-full flex flex-col overflow-hidden"
     >
       <Meta
         className="block"
-        title={<CardTitle tenPhim={tenPhim} />}
+        title={<CardTitle tenPhim={tenPhim} detailUrl={DETAIL_ROUTE} />}
         description={<CardDesc ngayKhoiChieu={ngayKhoiChieu} />}
       ></Meta>
     </Card>
