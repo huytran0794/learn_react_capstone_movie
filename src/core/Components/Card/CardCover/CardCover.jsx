@@ -11,7 +11,7 @@ import { BsFilm } from "react-icons/bs";
 /* import local component */
 import CustomButton from "../../Button/CustomButton";
 
-export default function CardCover({ url }) {
+export default function CardCover({ url, detailUrl }) {
   return (
     <div
       className={clsx(
@@ -20,7 +20,8 @@ export default function CardCover({ url }) {
         "relative",
         "rounded-lg",
         "cursor-pointer w-full h-full overflow-hidden",
-        "shadow-xl"
+        "shadow-xl",
+        "group"
       )}
     >
       <img
@@ -45,7 +46,7 @@ export default function CardCover({ url }) {
       >
         <ul className="overlay-btn-list absolute top-1/2 w-full -translate-y-1/2 flex flex-col items-center justify-center gap-4 z-[2]">
           <li className="btn-detail opacity-0 group-hover:opacity-100 transition-all duration-1000">
-            <NavLink to={`/detail/:id`} className="block min-w-[140px] h-12">
+            <NavLink to={detailUrl} className="block min-w-[140px] h-12">
               <CustomButton
                 btnType="btnPink"
                 className="rounded-[30px] w-[140px] h-full"
