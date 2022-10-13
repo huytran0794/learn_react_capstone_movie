@@ -20,7 +20,7 @@ export default function LoginForm({
   const [form] = Form.useForm();
   return (
     <Form
-      name="basic"
+      name="loginForm"
       layout={formLayout}
       form={form}
       size={size}
@@ -61,12 +61,6 @@ export default function LoginForm({
           placeholder="Enter your password..."
           className="py-2 outline-none border-2 border-solid border-transparent hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
         />
-      </Form.Item>
-
-      <Form.Item name="remember" valuePropName="checked" className="mb-8">
-        <Checkbox className="text-[#9CA7CB] text-xl hover:text-white transition-all duration-1000">
-          Remember me
-        </Checkbox>
       </Form.Item>
 
       <Form.Item className="flex justify-center">

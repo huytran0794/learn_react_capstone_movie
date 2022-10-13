@@ -4,8 +4,23 @@
 
 
 /* Body styling */
+html {
+    min-height: 100%;
+}
 body {
     background-color: #1A2030!important;
+    min-height: 100%;
+}
+
+.root {
+    min-height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
 }
 
 a {
@@ -102,26 +117,27 @@ a {
 
 
 /* tabs styling */
-.ant-tabs-tab-btn {
+.tabs-cinema-movies .ant-tabs-tab-btn {
     color: #28324A!important;
 }
 
-.ant-tabs-left > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane, .ant-tabs-left > div > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
+.tabs-cinema-movies .ant-tabs-left > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane,
+.tabs-cinema-movies .ant-tabs-left > div > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
     padding-left: 0px!important;
 }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+.tabs-cinema-movies .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #fff!important;
 }
 
-.ant-tabs-ink-bar {
+.tabs-cinema-movies .ant-tabs-ink-bar {
     background: #9CA7CB!important;
     width: 4px!important;
     border-radius: 10px!important;
     transition: all 0.5s!important;
 }
 
-.ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+.tabs-cinema-movies .ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
     border-right: 1.5px solid #28324A;
 }
 
@@ -142,3 +158,51 @@ a.link {
     border-bottom: 1px solid white!important;
 }
 /* tabs movie item styling */
+
+
+/* tabs in profile page */
+.profile .ant-tabs-ink-bar {
+    background: #9CA7CB!important;
+    height:5px!important;
+    border-radius: 10px!important;
+}
+
+.profile .ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap, .profile .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-wrap {
+    border-bottom: 1.5px solid #28324A!important;
+}
+
+.profile .ant-tabs-tab-btn {
+    color: white!important;
+    font-size: 25px;
+}
+
+/* tabs in profile page */
+
+/* booking history table */
+.bookingHistoryTable .ant-table-thead th.ant-table-cell {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28324A;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.bookingHistoryTable .ant-pagination li:not(:last-child) {
+    margin-right: 15px;
+}
+
+.bookingHistoryTable .ant-pagination li {
+    background-color: #fff!important;
+}
+
+.bookingHistoryTable .ant-pagination li button.ant-pagination-item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookingHistoryTable .ant-pagination-item {
+    /* background-color: #fff!important; */
+    color: #28324A;
+}
+/* booking history table */

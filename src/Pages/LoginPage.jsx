@@ -8,7 +8,7 @@ import Container from "../core/Components/Container/Container";
 /* import local component */
 import LoginForm from "../core/Components/Form/LoginForm/LoginForm";
 import Logo from "../core/Components/Logo/Logo";
-import { useActions } from "../core/redux/slice/userSlice";
+import { userActions } from "../core/redux/slice/userSlice";
 
 /* import services */
 import USER_SERVICE from "../core/service/userService";
@@ -26,7 +26,7 @@ export default function LoginPage() {
     USER_SERVICE.login({ taiKhoan, matKhau })
       .then((res) => {
         // update redux store
-        dispatch(useActions.login(res.data.content));
+        dispatch(userActions.login(res.data.content));
         // update local storage
         LOCAL_SERVICE.user.set(res.data.content);
         // show success notifcation then redirect

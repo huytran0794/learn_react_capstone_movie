@@ -27,7 +27,7 @@ export default function SectionWrapper({
                 titleCustomClass
               )}
             >
-              {title}
+              <span className="relative z-[2]">{title}</span>
             </h3>
             {subTitle && (
               <h6
