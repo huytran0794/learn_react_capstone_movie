@@ -5,7 +5,7 @@ import CINEMA_SERVICE from "../../../core/service/cinemaService";
 import { Card, Rate } from "antd";
 import CardCover from "../../../core/Components/Card/CardCover/CardCover";
 import ScheduleAccordion from "../../../core/Components/Accordion/ScheduleAccordion/ScheduleAccordion";
-import TabsCinemaBrand from "../../../core/Components/Tabs/TabsCinemaBrand";
+
 export default function SectionMovieInfo({ movieData, id }) {
   const renderMovieInfo = () => {
     let rating = (movieData.danhGia * 5) / 10;
