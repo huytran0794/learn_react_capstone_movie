@@ -8,7 +8,7 @@ import Layout from "./core/Layout/Layout";
 import Home from "./Pages/Home/Home";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
-import MovieDetailPage from "./Pages/MovieDetailPage";
+import MovieDetailPage from "./Pages/Details/MovieDetailPage";
 import MovieBookingPage from "./Pages/Booking/MovieBookingPage";
 import Profile from "./Pages/Profile/Profile";
 

@@ -51,7 +51,7 @@ export default function UserAccountNav() {
           <NavLink className="user-account block" to="profile">
             <div className="flex items-center gap-3">
               <FiUser className="font-medium text-white text-xl" />
-              <div className="user-name text-white text-xl font-semibold tracking-wider">
+              <div className="user-name text-white text-xl font-mediumm tracking-wider">
                 {userInfo?.hoTen}
               </div>
             </div>
