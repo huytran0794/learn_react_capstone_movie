@@ -21,7 +21,7 @@ export default function TabProfile({
   const [form] = Form.useForm();
   const { Option } = Select;
   const initialValues = {
-    taiKhoan: userProfile.taiKhoan,
+    username: userProfile.taiKhoan,
     password: userProfile.matKhau,
     fullname: userProfile.hoTen,
     useremail: userProfile.email,
@@ -52,7 +52,7 @@ export default function TabProfile({
 
   const onFinish = (values) => {
     let {
-      taiKhoan,
+      username: taiKhoan,
       password: matKhau,
       fullname: hoTen,
       useremail: email,
@@ -74,11 +74,13 @@ export default function TabProfile({
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-
+  const labelItem = (labelText) => (
+    <Label className="text-lg font-semibold text-white">{labelText}</Label>
+  );
   return (
     <div className="tabProfile py-4">
       <Form
-        name="loginForm"
+        name="profleForm"
         layout={formLayout}
         form={form}
         initialValues={initialValues}
@@ -92,42 +94,47 @@ export default function TabProfile({
         className={clsx("login-form", "text-lg", className)}
       >
         <Form.Item
-          label={
-            <Label className="text-lg font-semibold text-white">
-              Tài khoản
-            </Label>
-          }
-          name="taiKhoan"
+          label={labelItem("Username")}
+          name="username"
           rules={[{ required: true }]}
-          className="mb-10"
+          className="mb-6 last:mb-0"
+          hasFeedback
         >
           <Input
+            disabled
             placeholder="Enter your username..."
             className="py-2 rounded-md outline-none border-2 border-solid border-transparent  hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
           />
         </Form.Item>
 
         <Form.Item
-          label={
-            <Label className="text-lg font-semibold text-white">Mật khẩu</Label>
-          }
+          label={labelItem("Passwords")}
           name="password"
-          rules={[{ required: true }]}
+          rules={[
+            { required: true },
+            { min: 6, message: "Username must be minimum 6 characters." },
+          ]}
+          hasFeedback
           className="mb-6"
         >
           <Input.Password
             placeholder="Enter your password..."
-            className="py-2 rounded-md outline-none border-2 border-solid border-transparent hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
+            className="py-2 rounded-md outline-none border-2 border-solid border-transparent  hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
           />
         </Form.Item>
 
         <Form.Item
-          label={
-            <Label className="text-lg font-semibold text-white">Họ tên</Label>
-          }
+          label={labelItem("Name")}
           name="fullname"
-          rules={[{ required: true }]}
+          rules={[
+            { required: true },
+            {
+              pattern: /^[A-Za-z\s]*$/i,
+              message: "Name must not contain number",
+            },
+          ]}
           className="mb-6"
+          hasFeedback
         >
           <Input
             placeholder="Enter your fullname..."
@@ -136,9 +143,7 @@ export default function TabProfile({
         </Form.Item>
         <Form.Item
           name="useremail"
-          label={
-            <Label className="text-lg font-semibold text-white">Email</Label>
-          }
+          label={labelItem("user email")}
           rules={[
             {
               type: "email",
@@ -150,6 +155,7 @@ export default function TabProfile({
             },
           ]}
           className="mb-6"
+          hasFeedback
         >
           <Input
             placeholder="Johndoe@email.com"
@@ -158,17 +164,23 @@ export default function TabProfile({
         </Form.Item>
         <Form.Item
           name="phone"
-          label={
-            <Label className="text-lg font-semibold text-white">Phone</Label>
-          }
-          rules={[{ required: true }]}
+          label={labelItem("Phone")}
+          rules={[
+            { required: true },
+            {
+              pattern: /^(?:\d*)$/,
+              message: "Phone number should contain just number",
+            },
+          ]}
           className="mb-6"
+          hasFeedback
         >
           <Input
             placeholder="089123456"
             className="py-2 rounded-md outline-none border-2 border-solid border-transparent hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
           />
         </Form.Item>
+
         <Form.Item
           name="userType"
           label={
@@ -176,16 +188,18 @@ export default function TabProfile({
               Loại tài khoản
             </Label>
           }
+          className={userProfile.maLoaiNguoiDung === "KhachHang" && "hidden"}
         >
           <Select>
             <Option value="KhachHang">Khách hàng</Option>
             <Option value="QuanTri">Quản trị</Option>
           </Select>
         </Form.Item>
+
         <Form.Item className="w-full">
           <CustomButton
             btnType="btnPink"
-            className="w-56 py-6 px-12 font-bold text-xl h-14"
+            className="w-full py-6 px-12 font-bold text-xl h-14"
             htmlType="submit"
           >
             Update profile

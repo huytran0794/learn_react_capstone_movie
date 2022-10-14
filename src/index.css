@@ -34,55 +34,49 @@ a {
 
 
 /* navbar styling */
-.navbar ul {
-    background: none!important;
-    border-bottom: none!important;
-    color: #ffffffcc!important;
-    font-size: 19px!important;
-    align-items: center;
-}
-
-.navbar ul li:not(:last-child) {
-    width: 33.33%;
-    flex-basis: 33.33%;
-    text-align: center;
-}
-
-.navbar .ant-menu-horizontal > .ant-menu-item a,
-.navbar .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover a {
-    color: #ffffffcc;
-}
-
-
-.navbar .ant-menu-horizontal > .ant-menu-item::after {
-    right: unset!important;
-    left: 0!important;
-}
-
-.navbar .ant-menu-horizontal:hover > .ant-menu-item::after {
-    right: 0!important;
-}
-
-
-.navbar .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item::after{
-    width: 0;
-    height: 2px;
-    background-color: #E4B233;
-    transition: 1s;
-}
-.navbar .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active::after {
-    border-bottom: none!important;
+.menu a {
+    /* py-4 px-7 cursor-pointer relative before:absolute before:-bottom-1 before:left-0 before:w-0 hover:before:w-full before:h-1 before:bg-[#9CA7CB] before:transition-all before:duration-1000 transition-all duration-1000" */
+    display: block;
     width: 100%;
+    height: 100%;
+    padding: 12px 25px;
+    position: relative;
+    color: #28324A!important;
+    transition: 1s
+}
+
+.menu a:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color:#9CA7CB;
     transition: 1s;
 }
 
-.navbar .ant-menu-horizontal > .ant-menu-item a:hover {
+.menu a:hover:before {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: white!important;
+}
+
+.menu a.active {
+    color: white!important;
+}
+
+.menu a.active:before {
+    width: 100%;
+}
+
+.menu .ant-menu-horizontal > .ant-menu-item a:hover {
     color: #E4B233!important;
 }
 
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
-    padding: 0 15px;
-}
 
 /* navbar styling */
 
@@ -112,13 +106,19 @@ a {
 /* card styling */
 
 
-/* login form styling */
+/*  form styling */
 .ant-form-item-explain-error {
     margin-top: 0.6rem;
     font-size: 16px;
     transition: 0.7s;
 }
-/* login form styling */
+
+.ant-form-item-feedback-icon-success,
+.ant-form-item-feedback-icon.ant-form-item-feedback-icon-error {
+    display: flex;
+}
+
+/*  form styling */
 
 
 /* tabs styling */
@@ -147,7 +147,7 @@ a {
 }
 
 a.link {
-    color: unset!important;
+    color: unset;
 }
 
 /* tabs styling */

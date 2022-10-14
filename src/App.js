@@ -11,18 +11,17 @@ import RegisterPage from "./Pages/RegisterPage";
 import MovieDetailPage from "./Pages/Details/MovieDetailPage";
 import MovieBookingPage from "./Pages/Booking/MovieBookingPage";
 import Profile from "./Pages/Profile/Profile";
-// import { useSelector } from "react-redux";
-// import Spinner from "./core/Components/Spinner/Spinner";
+import CinemaPage from "./Pages/CinemaPage";
 
 function App() {
   return (
     <>
-      {/* <Spinner /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="cinemas" element={<CinemaPage />} />
           <Route path="movies">
             <Route path="detail/:id" element={<MovieDetailPage />} />
             <Route
@@ -38,6 +37,3 @@ function App() {
 }
 
 export default App;
-// background: #283048;  /* fallback for old browsers */
-// background: -webkit-linear-gradient(to top, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
-// background: linear-gradient(to top, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

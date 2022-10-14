@@ -15,12 +15,9 @@ export default function Header() {
   return (
     <header className={headerWrapClass}>
       <Container>
-        <div className="py-5 flex justify-between items-center">
+        <div className="py-5 flex flex-wrap justify-between items-center">
           <Logo />
-          <NavigationBar
-            mode={MAIN_NAV_DATA.mode}
-            menuItems={MAIN_NAV_DATA.item}
-          />
+          <NavigationBar menuItems={MAIN_NAV_DATA} />
           <UserAccountNav />
         </div>
       </Container>

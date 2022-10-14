@@ -24,9 +24,6 @@ export default function LoginForm({
       layout={formLayout}
       form={form}
       size={size}
-      initialValues={{
-        remember: true,
-      }}
       validateMessages={validateMessages}
       onFinish={(values) => {
         onFinish(values);
@@ -45,7 +42,7 @@ export default function LoginForm({
       >
         <Input
           placeholder="Enter your username..."
-          className="py-2 outline-none border-2 border-solid border-transparent  hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
+          className="py-2 rounded-md outline-none border-2 border-solid border-transparent  hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
         />
       </Form.Item>
 
@@ -59,7 +56,7 @@ export default function LoginForm({
       >
         <Input.Password
           placeholder="Enter your password..."
-          className="py-2 outline-none border-2 border-solid border-transparent hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
+          className="py-2 rounded-md outline-none border-2 border-solid border-transparent hover:border-[#1A2030] focus:border-[#1A2030] transition-all duration-700"
         />
       </Form.Item>
 

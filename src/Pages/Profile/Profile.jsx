@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 
 import TabProfile from "./TabProfile/TabProfile";
 import TabBookingHistory from "./TabBookingHistory/TabBookingHistory";
-import Container from "../../core/Components/Container/Container";
 import SectionWrapper from "../../core/Components/Section/SectionWrapper";
 import USER_SERVICE from "../../core/service/userService";
 

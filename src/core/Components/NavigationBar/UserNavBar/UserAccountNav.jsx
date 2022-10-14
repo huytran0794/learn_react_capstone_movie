@@ -22,7 +22,7 @@ export default function UserAccountNav() {
   let renderContent = () => {
     if (!userInfo) {
       return (
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 md:order-2">
           <div className="text-lg py-2 px-5 text-right flex justify-center flex-col gap-1">
             <p className="text-[#fffc] font-medium tracking-wider relative capitalize mb-0">
               Don't have account yet ?
@@ -47,7 +47,7 @@ export default function UserAccountNav() {
       );
     } else {
       return (
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 md:order-2">
           <NavLink className="user-account block" to="profile">
             <div className="flex items-center gap-3">
               <FiUser className="font-medium text-white text-xl" />

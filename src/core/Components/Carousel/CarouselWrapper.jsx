@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 
 export default function CarouselWrapper({ carouselClassName, data }) {
   const renderCarouselItem = (data) => {
-    console.log(data);
     return data.map((item, idx) => {
       return (
         <SwiperSlide
@@ -31,7 +30,6 @@ export default function CarouselWrapper({ carouselClassName, data }) {
       modules={[Navigation]}
       spaceBetween={50}
       navigation
-      onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
       grabCursor={true}
       loop={true}
