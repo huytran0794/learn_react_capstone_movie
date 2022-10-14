@@ -61,24 +61,26 @@ export default function SectionBookingInfo({
         });
         return (
           <div
-            className="selectedSeatItem flex justify-between rounded-md text-white bg-slate-500/20 p-7 relative"
+            className="selectedSeatItem flex justify-between rounded-md text-white bg-slate-500/20 p-3 relative"
             id={bookingSeat.maGhe}
             key={bookingSeat.maGhe.toString() + bookingSeatIdx}
           >
-            <div className="col--left w-3/12 py-3">
+            <div className="col--left w-3/12">
               <div className="seatName rounded-md flex flex-col justify-center items-center p-4 bg-indigo-400 font-bold text-2xl">
                 <p className="mb-0">{bookingSeat.tenGhe}</p>
               </div>
             </div>
-            <div className="col--right w-8/12 py-3">
-              <div className="col-content-wrapper flex flex-col justify-around">
-                <div className="seat-type text-base font-semibold tracking-wider">
-                  <p className="mb-0">
+            <div className="col--right w-8/12">
+              <div className="col-content-wrapper flex flex-col h-full">
+                <div className="seat-type text-lg font-semibold tracking-wider flex-1">
+                  <p className="type mb-0">
                     Seat type: <span>{bookingSeat.loaiGhe}</span>
                   </p>
                 </div>
-                <div className="seat-price text-sm tracking-wide mt-auto">
-                  <p className="mb-0">{bookingSeat.giaVe}</p>
+                <div className="seat-price text-base font-medium tracking-wide mt-auto">
+                  <p className="text mb-0">
+                    Price: <span className="price">{bookingSeat.giaVe}</span>
+                  </p>
                 </div>
                 <Tooltip
                   title={`Click here to delete seat ${bookingSeat.tenGhe}`}

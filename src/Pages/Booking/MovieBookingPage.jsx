@@ -11,68 +11,53 @@ import TICKET_SERVICE from "../../core/service/bookingservice";
 
 import SectionSeats from "./SectionSeats/SectionSeats";
 import SectionBookingInfo from "./SectionBookingInfo/SectionBookingInfo";
-import SectionWrapper from "../../core/Components/Section/SectionWrapper";
-import { useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
+import SectionBanner from "./SectionBanner/SectionBanner";
+import { spinnerActions } from "../../core/redux/slice/spinnerSlice";
+import SectionMovieInfo from "./SectionMovieInfo/SectionMovieInfo";
+import Spinner from "../../core/Components/Spinner/Spinner";
 
 export default function MovieBookingPage() {
   let { scheduleId } = useParams();
+  let dispatch = useDispatch();
   let [bookingTicketInfo, setBookingTicketInfo] = useState({});
-  let bookingSeatList = useSelector(
-    (state) => state.bookTicketReducer.bookingTicketInfo
-  );
-  useEffect(() => {
-    TICKET_SERVICE.getMovieScheduleById(scheduleId)
-      .then((res) => {
-        res.data.statusCode === 200 && setBookingTicketInfo(res.data.content);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
 
-  const renderMovieBookingInfo = () => {
-    return (
-      <>
-        <div className="col--left w-8/12 h-full">
-          <div className="wrapper bg-[#28324A]/20 p-[30px] rounded-lg border border-solid border-slate-300/20">
-            {Object.keys(bookingTicketInfo).length && (
-              <SectionSeats
-                seatList={bookingTicketInfo.danhSachGhe}
-                bookingSeatList={bookingSeatList}
-              />
-            )}
-          </div>
-        </div>
-        <div className="col--right w-4/12 h-full">
-          <div className="wrapper bg-[#28324A]/20 p-[30px] rounded-lg border border-solid border-slate-300/20">
-            {Object.keys(bookingTicketInfo).length && (
-              <SectionBookingInfo
-                bookingInfo={bookingTicketInfo.thongTinPhim}
-                scheduleId={scheduleId}
-                bookingSeatList={bookingSeatList}
-              />
-            )}
-          </div>
-        </div>
-      </>
-    );
-  };
+  useEffect(() => {
+    dispatch(spinnerActions.setLoadingOn());
+    const getData = async () => {
+      try {
+        let response = await TICKET_SERVICE.getMovieScheduleById(scheduleId);
+        setBookingTicketInfo(response.data.content);
+        dispatch(spinnerActions.setLoadingOff());
+      } catch (err) {
+        dispatch(spinnerActions.setLoadingOff());
+        if (err.response) {
+          // The client was given an error response (5xx, 4xx)
+          console.log(err.response.data);
+        } else if (err.request) {
+          // The client never received a response, and the request was never left
+          console.log(err.request);
+        } else {
+          console.log(err);
+          // Anything else
+        }
+      }
+    };
+    getData();
+  }, []);
   return (
-    <div className="movie-booking text-white h-full">
-      {/* <div className="movie-booking-steps">
-        <Container>
-          <div className="wrapper">
-            <SectionBookingSteps />
-          </div>
-        </Container>
-      </div> */}
-      <SectionWrapper
-        title="Choose a seat"
-        subTitle="Choose the seat you want to occupy"
-        customClass="movie-booking-content h-full"
-        content={renderMovieBookingInfo()}
-        contentCustomClass="flex gap-20"
-      />
-    </div>
+    <>
+      <Spinner />
+      {Object.keys(bookingTicketInfo).length && (
+        <div className="movie-ticket-booking">
+          <SectionBanner imgUrl={bookingTicketInfo.thongTinPhim.hinhAnh} />
+          <SectionMovieInfo
+            bookingTicketInfo={bookingTicketInfo}
+            scheduleId={scheduleId}
+          />
+        </div>
+      )}
+    </>
   );
 }

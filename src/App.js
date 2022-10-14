@@ -11,24 +11,29 @@ import RegisterPage from "./Pages/RegisterPage";
 import MovieDetailPage from "./Pages/Details/MovieDetailPage";
 import MovieBookingPage from "./Pages/Booking/MovieBookingPage";
 import Profile from "./Pages/Profile/Profile";
+// import { useSelector } from "react-redux";
+// import Spinner from "./core/Components/Spinner/Spinner";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="movies">
-          <Route path="detail/:id" element={<MovieDetailPage />} />
-          <Route
-            path="book-ticket/:scheduleId"
-            element={<MovieBookingPage />}
-          />
+    <>
+      {/* <Spinner /> */}
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="movies">
+            <Route path="detail/:id" element={<MovieDetailPage />} />
+            <Route
+              path="book-ticket/:scheduleId"
+              element={<MovieBookingPage />}
+            />
+          </Route>
+          <Route path="profile" element={<Profile />} />
         </Route>
-        <Route path="profile" element={<Profile />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }
 
