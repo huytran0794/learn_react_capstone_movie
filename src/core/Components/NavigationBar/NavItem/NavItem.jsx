@@ -8,7 +8,6 @@ import { NavLink } from "react-router-dom";
 export default function NavItem({ toUrl, children }) {
   return (
     <NavLink
-      exact
       to={toUrl}
       className={clsx(
         "font-medium text-md uppercase md:text-3xl md:font-semibold"

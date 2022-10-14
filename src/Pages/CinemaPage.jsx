@@ -22,9 +22,11 @@ export default function CinemaPage() {
     <div className="cinemas-page">
       <SectionWrapper
         title="List of partner(s)"
-        contentCustomClass="h-[1000px]"
+        contentCustomClass="h-full"
         customClass="tabs-cinema-movies"
-        content={<TabsCinemaBrand hethongRapPhim={hethongRapPhim} />}
+        content={
+          <TabsCinemaBrand tabPosition="top" hethongRapPhim={hethongRapPhim} />
+        }
       />
     </div>
   );

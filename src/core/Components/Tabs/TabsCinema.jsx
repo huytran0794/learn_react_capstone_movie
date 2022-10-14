@@ -21,11 +21,9 @@ export default function TabsCinema({ tabPosition = "left", cumRap }) {
           }`}
           color="#28324A"
         >
-          <NavLink to="/" className="link w-full">
-            <div className="cinema-branch font-bold h-20 transition-all duration-100 w-full flex items-center">
-              <p className="text-xl text-left truncate mb-0">{rap.tenCumRap}</p>
-            </div>
-          </NavLink>
+          <div className="cinema-branch font-bold h-20 transition-all duration-100 w-full flex items-center">
+            <p className="text-xl text-left truncate mb-0">{rap.tenCumRap}</p>
+          </div>
         </Tooltip>
       );
 

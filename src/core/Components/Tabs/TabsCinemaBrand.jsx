@@ -6,7 +6,6 @@ import { Tabs, Tooltip } from "antd";
 
 /* import local components */
 import TabsCinema from "./TabsCinema";
-import { NavLink } from "react-router-dom";
 
 export default function TabsCinemaBrand({
   tabPosition = "left",
@@ -40,7 +39,7 @@ export default function TabsCinemaBrand({
   return (
     <Tabs
       tabPosition={tabPosition}
-      className="tabs__cinema-brand h-[1000px]"
+      className="tabs__cinema-brand h-full"
       items={renderTabsCinemaBrand(hethongRapPhim)}
       tabBarGutter={50}
     />
