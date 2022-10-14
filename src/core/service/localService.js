@@ -1,5 +1,4 @@
 const STORAGE_KEY = "user";
-const TOKEN_STORAGE_KEY = "access_token";
 const LOCAL_SERVICE = {
   user: {
     set: (dataLogin) =>

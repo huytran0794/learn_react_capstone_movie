@@ -6,7 +6,7 @@ import ItemMovie from "./ItemMovie";
 export default function TabItemMovie({ dsPhim }) {
   const renderTabMovie = (dsPhim) => {
     return dsPhim.map((phim, phimIdx) => (
-      <ItemMovie key={phim.maPhim.toString() + phimIdx} {...phim} />
+      <ItemMovie key={phim.maPhim.toString() + phimIdx} {...phim} customColClass />
     ));
   };
   return (

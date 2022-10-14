@@ -8,7 +8,10 @@ import { Tabs, Tooltip } from "antd";
 import TabsCinema from "./TabsCinema";
 import { NavLink } from "react-router-dom";
 
-export default function TabsCinemaBrand({ hethongRapPhim }) {
+export default function TabsCinemaBrand({
+  tabPosition = "left",
+  hethongRapPhim,
+}) {
   const renderTabsCinemaBrand = (hethongRapPhim) => {
     let labelTabItem;
     return hethongRapPhim.map((rapPhim, rapPhimIdx) => {
@@ -29,7 +32,6 @@ export default function TabsCinemaBrand({ hethongRapPhim }) {
       return {
         label: labelTabItem,
         key: rapPhim.maHeThongRap.toString() + " - " + rapPhimIdx,
-        // children: getTheaterTabs(rapPhim.lstCumRap),
         children: <TabsCinema cumRap={rapPhim.lstCumRap} />,
       };
     });
@@ -37,7 +39,7 @@ export default function TabsCinemaBrand({ hethongRapPhim }) {
 
   return (
     <Tabs
-      tabPosition="left"
+      tabPosition={tabPosition}
       className="tabs__cinema-brand h-[1000px]"
       items={renderTabsCinemaBrand(hethongRapPhim)}
       tabBarGutter={50}

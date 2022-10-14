@@ -13,8 +13,6 @@ import SectionSeats from "./SectionSeats/SectionSeats";
 import SectionBookingInfo from "./SectionBookingInfo/SectionBookingInfo";
 import SectionWrapper from "../../core/Components/Section/SectionWrapper";
 import { useSelector } from "react-redux";
-import SectionBookingSteps from "./SectionBookingSteps/SectionBookingSteps";
-import Container from "../../core/Components/Container/Container";
 
 export default function MovieBookingPage() {
   let { scheduleId } = useParams();

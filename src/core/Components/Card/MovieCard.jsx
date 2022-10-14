@@ -12,7 +12,7 @@ import CardDesc from "./CardDesc/CardDesc";
 
 export default function MovieCard(props) {
   let { maPhim, tenPhim, trailer, hinhAnh, ngayKhoiChieu } = props.data;
-  const DETAIL_ROUTE = `/detail/${maPhim}`;
+  const DETAIL_ROUTE = `movies/detail/${maPhim}`;
   let renderCard = () => (
     <Card
       id={maPhim}

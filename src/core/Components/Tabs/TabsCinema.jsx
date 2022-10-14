@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 /* import local components */
 import TabItemMovie from "./TabItemMovie";
 
-export default function TabsCinema({ cumRap }) {
+export default function TabsCinema({ tabPosition = "left", cumRap }) {
   const renderTabsCinema = (cumRap) => {
     let labelTabItem;
     return cumRap.map((rap, rapIdx) => {
@@ -38,7 +38,7 @@ export default function TabsCinema({ cumRap }) {
   };
   return (
     <Tabs
-      tabPosition="left"
+      tabPosition={tabPosition}
       className="tabs__cinema-branch h-[1000px]"
       items={renderTabsCinema(cumRap)}
       tabBarGutter={50}
